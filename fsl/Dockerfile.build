@@ -1,0 +1,8 @@
+# Build from the repo root with `fsl-build.sh`
+
+FROM debian:stable-slim
+COPY ./target/release/frontier-template-node /usr/bin/frontier-template-node
+
+EXPOSE 9944
+
+CMD ["frontier-template-node","--dev","--ws-external"]

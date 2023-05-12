@@ -18,6 +18,7 @@ RUN rustup target add wasm32-unknown-unknown
 RUN git clone https://github.com/paritytech/frontier /frontier
 RUN cd /frontier && git submodule init && git submodule update
 
+RUN apt-get install -y protobuf-compiler
 # Download rust dependencies and build the rust binary
 RUN cargo build "--$PROFILE"
 
